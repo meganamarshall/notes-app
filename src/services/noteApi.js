@@ -1,7 +1,4 @@
-export const createNote = note => {
-  return Promise.resolve({
-    _id: '1234',
-    ...note
-  });
-};
+import { post } from './request';
+
+export const createNote = note => post('/api/v1/notes');
 

@@ -15,7 +15,7 @@ export const login = () => {
 export const handleAuth = () => {
   return new Promise((resolve, reject) => {
     auth0.parseHash((error, results) => {
-      if(results && results.accessToken && results.id) {
+      if(results && results.accessToken && results.idToken) {
         auth0.client.userInfo(results.accessToken, (err, profile) => {
           if(err) return reject('Could not get profile');
           resolve({

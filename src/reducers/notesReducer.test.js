@@ -1,5 +1,5 @@
 import reducer from './notesReducer';
-import { NEW_NOTE_PENDING, NEW_NOTE, FETCH_NOTES_PENDING } from '../actions/notesActions';
+import { NEW_NOTE_PENDING, NEW_NOTE, FETCH_NOTES_PENDING, FETCH_NOTES } from '../actions/notesActions';
 
 describe('notes reducer', () => {
   it('handles the new note pending action', () => {
@@ -47,5 +47,20 @@ describe('notes reducer', () => {
       list: []
     });
   });
-  
+  it('handles the fetch notes action', () => {
+    const initialState = {
+      loading: true,
+      list: []
+    };
+
+    const newState = reducer(initialState, {
+      type: FETCH_NOTES,
+      payload: [{ title: 'hello', body: 'there' }]
+    });
+
+    expect(newState).toEqual({
+      loading: false,
+      list: [{ title: 'hello', body: 'there' }]
+    });
+  });
 });

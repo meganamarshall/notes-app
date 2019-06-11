@@ -14,7 +14,7 @@ export default function reducer(state = initialState, action) {
     case FETCH_NOTES_PENDING:
       return { ...state, loading: true };
     case FETCH_NOTES:
-      return { ...state, loading: false, list: action.payload }
+      return { ...state, loading: false, list: action.payload };
     default:
       return state;
   }

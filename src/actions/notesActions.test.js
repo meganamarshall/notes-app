@@ -4,6 +4,9 @@ import { newNote, fetchNotes } from './notesActions';
 jest.mock('../services/noteApi.js', () => ({
   createNote() {
     return Promise.resolve([]);
+  },
+  getNotes() {
+    return Promise.resolve([]);
   }
 }));
 

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Note from './Note';
 
 function Notes({ notes }) {
-  const noteList = notes.map(note => {
+  const noteList = notes.map(note => (
     <li key={note._id}>
       <Note note={note} />
-    </li>;
-  });
-
+    </li>
+  ));
+ 
   return (
     <ul>
       {noteList}

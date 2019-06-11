@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Note({ note }) {
   return (
-    <p>{note.title}</p>
+    <p>{note.title} HI</p>
   );
 }
 

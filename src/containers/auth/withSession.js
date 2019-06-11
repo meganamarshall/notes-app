@@ -22,9 +22,10 @@ export const withSession = Component => {
       return <Component />;
     }
   }
-  const mapStateToProps = state => {
-    token: getToken(state);
-  };  
+  const mapStateToProps = state => ({
+    token: getToken(state)
+  });
+  
   return connect(
     mapStateToProps
   )(WithSession);

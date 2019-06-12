@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Note({ note, deleteNote }) {
   return (
+
     <>
       <Link to={`notes/${note._id}`}>{note.title}</Link>
       <button onClick={deleteNote.bind(null, note._id)}>Delete Note</button>
